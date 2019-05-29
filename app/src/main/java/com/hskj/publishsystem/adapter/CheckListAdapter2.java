@@ -54,7 +54,7 @@ public class CheckListAdapter2 extends MyBaseAdapter2<CheckListBean> {
 		holderView.title.setText("排期名称："+item.getName());
 		holderView.startTime.setText(item.getStartDate());
 		holderView.endTime.setText(item.getEndDate());
-		holderView.control.setText("审核");
+		holderView.control.setText("审核 >");
 		return convertView;
 	}
 

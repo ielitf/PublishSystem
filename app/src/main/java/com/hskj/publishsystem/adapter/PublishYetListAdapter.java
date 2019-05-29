@@ -54,7 +54,7 @@ public class PublishYetListAdapter extends MyBaseAdapter2<PublicListBean> {
 		holderView.title.setText("排期名称："+item.getName());
 		holderView.startTime.setText(item.getStartDate());
 		holderView.endTime.setText(item.getEndDate());
-		holderView.control.setText("取消");
+		holderView.control.setText("取消 >");
 		return convertView;
 	}
 

@@ -11,6 +11,12 @@ public class CodeConstants {
     public static String STATUS = "status";//查询条目的状态
     public static String PUBLISH_STATUS = "publishStatus";//发表信息的状态：已发布，未发布等
 
+    public static String ID = "id";//列表排期的id
+    public static String NAME = "name";//列表名
+    public static String START_DATA = "startData";
+    public static String END_DATA = "endData";
+
+
     public static String HEADERS = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTU5MDk3NTcyODk0LCJleHAiOjE1NjAzOTM1NzIsInVzZXJuYW1lIjoid2FuZ3l1ZSJ9.QbMTOHpdLebVRfx_ryw_6of-6ofGbZOSgvxJyBARyqg";
 
 

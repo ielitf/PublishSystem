@@ -1,6 +1,7 @@
 package com.hskj.publishsystem.control;
 
 import android.app.Application;
+import android.widget.Toast;
 
 import com.hskj.publishsystem.utils.SharedPreferenceManager;
 import com.lzy.okgo.OkGo;
@@ -16,10 +17,15 @@ import java.util.logging.Level;
 import okhttp3.OkHttpClient;
 
 public class MyApplication extends Application {
-	private static final String SHARED_PREFERENCE_NAME = "MeetingSystem_sp";
+	private static final String SHARED_PREFERENCE_NAME = "PublishSystem_sp";
+	private static MyApplication application;
+	public static MyApplication getMyApplication() {
+		return application;
+	}
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		application = this;
 		SharedPreferenceManager.init(getApplicationContext(), SHARED_PREFERENCE_NAME);
 
 		//使用OkGo的拦截器
@@ -52,5 +58,8 @@ public class MyApplication extends Application {
 //				.setCacheMode(CacheMode.IF_NONE_CACHE_REQUEST)
 //				.setCacheTime(CacheEntity.CACHE_NEVER_EXPIRE)
 				.setRetryCount(3);
+	}
+	public void showToast(String msg) {
+		Toast.makeText(application, msg + "", Toast.LENGTH_SHORT).show();
 	}
 }

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/top_commom" />
+    <include layout="@layout/main_top" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -57,6 +57,7 @@
                 android:id="@+id/check_detail_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:singleLine="true"
                 android:text="2019.04.20-2019.05.20"
                 android:textColor="@color/text_black"
                 android:textSize="16sp" />
@@ -117,7 +118,7 @@
         <EditText
             android:id="@+id/check_detail_edit"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="168dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/bg_edittext"
             android:gravity="start"
@@ -134,18 +135,18 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/check_detail_cancel"
+                android:id="@+id/check_detail_noPass"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="取消" />
+                android:text="不通过" />
 
             <Button
-                android:id="@+id/check_detail_publish"
+                android:id="@+id/check_detail_pass"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="发布" />
+                android:text="通过" />
         </LinearLayout>
     </LinearLayout>
 
