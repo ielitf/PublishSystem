@@ -14,11 +14,12 @@ public class LauncherActivity extends AppCompatActivity {
         @Override
         public void run() {
             if (isFirstUse()){
-                finish();
                 startActivity(new Intent(LauncherActivity.this,LauncherViewPagerActivity.class));
+                finish();
             }
             else {
                 startActivity(new Intent(LauncherActivity.this,MainActivity.class));
+                finish();
             }
         }
     };

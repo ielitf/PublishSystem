@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.hskj.publishsystem.R;
 import com.hskj.publishsystem.adapter.CheckListAdapter2;
+import com.hskj.publishsystem.base.BaseFragment;
 import com.hskj.publishsystem.bean.CheckListBean;
 import com.hskj.publishsystem.control.CodeConstants;
 import com.hskj.publishsystem.widget.XListView;
@@ -25,7 +26,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CheckFragment extends Fragment implements XListView.IXListViewListener {
+public class CheckFragment extends BaseFragment implements XListView.IXListViewListener {
     private View contentView;
     private Context context;
     private XListView mListView;
@@ -39,11 +40,10 @@ public class CheckFragment extends Fragment implements XListView.IXListViewListe
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        contentView = inflater.inflate(R.layout.fragment_check, container, false);
+    protected void onCreateView(Bundle savedInstanceState) {
+        setContentView(R.layout.fragment_check);
         context = getActivity();
-        mListView = contentView.findViewById(R.id.check_list);
+        mListView = (XListView) findViewById(R.id.check_list);
         mListView.setXListViewListener(this);
         mListView.setPullRefreshEnable(true);
         mListView.setPullLoadEnable(true);
@@ -60,8 +60,21 @@ public class CheckFragment extends Fragment implements XListView.IXListViewListe
                 startActivity(intent);
             }
         });
+    }
 
-        return contentView;
+    @Override
+    protected boolean hasPopWindow() {
+        return false;
+    }
+
+    @Override
+    protected boolean isNeedInitBack() {
+        return true;
+    }
+
+    @Override
+    protected String getTopbarTitle() {
+        return "审核列表";
     }
 
     @Override

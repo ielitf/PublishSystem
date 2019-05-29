@@ -1,5 +1,6 @@
 package com.hskj.publishsystem.ui.check;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -31,22 +32,19 @@ public class CheckNewsDetailsActivity extends BaseActivity implements View.OnCli
     private ListView listView;
     private EditText editText;
     @Override
-    protected void setLayout() {
-        setContentView(R.layout.activity_check_news_details);
-    }
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_check_news_details);
         super.onCreate(savedInstanceState);
-        name = activity.getIntent().getStringExtra(CodeConstants.NAME);
-        startData = activity.getIntent().getStringExtra(CodeConstants.START_DATA);
-        endData = activity.getIntent().getStringExtra(CodeConstants.END_DATA);
+        name = getIntent().getStringExtra(CodeConstants.NAME);
+        startData = getIntent().getStringExtra(CodeConstants.START_DATA);
+        endData = getIntent().getStringExtra(CodeConstants.END_DATA);
         id = getIntent().getIntExtra(CodeConstants.ID, 0);
+        initView();
         loadData();
     }
 
 
-    @Override
-    protected void initViews() {
+    protected void initView() {
         listView = findViewById(R.id.check_detail_list);
         noPassBtn = findViewById(R.id.check_detail_noPass);
         passBtn = findViewById(R.id.check_detail_pass);
@@ -62,6 +60,16 @@ public class CheckNewsDetailsActivity extends BaseActivity implements View.OnCli
     @Override
     protected void initArgs() {
         super.initArgs();
+    }
+
+    @Override
+    protected void setLayout() {
+
+    }
+
+    @Override
+    protected void initViews() {
+
     }
 
     @Override

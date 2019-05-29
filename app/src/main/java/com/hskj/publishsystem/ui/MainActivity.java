@@ -8,13 +8,14 @@ import android.os.Bundle;
 import android.widget.RadioGroup;
 
 import com.hskj.publishsystem.R;
+import com.hskj.publishsystem.base.BaseActivity;
 import com.hskj.publishsystem.mylistener.FragmentCallBack;
 import com.hskj.publishsystem.ui.check.CheckFragment;
 import com.hskj.publishsystem.ui.home.HomeFragment;
 import com.hskj.publishsystem.ui.me.MeFragment;
 import com.hskj.publishsystem.ui.publish.PublishFragment;
 
-public class MainActivity extends AppCompatActivity  implements FragmentCallBack {
+public class MainActivity extends BaseActivity  implements FragmentCallBack {
     private HomeFragment homeFragment = null;
     private Fragment mContent = null;
     private CheckFragment checkFragment = null;
@@ -28,9 +29,9 @@ public class MainActivity extends AppCompatActivity  implements FragmentCallBack
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initViews();
+        super.onCreate(savedInstanceState);
+        initView();
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         mContent = homeFragment;
@@ -38,7 +39,17 @@ public class MainActivity extends AppCompatActivity  implements FragmentCallBack
         fragmentTransaction.commit();
     }
 
-    private void initViews() {
+    @Override
+    protected void setLayout() {
+
+    }
+
+    @Override
+    protected void initViews() {
+
+    }
+
+    private void initView() {
         homeFragment = new HomeFragment();
         checkFragment = new CheckFragment();
         publishFragment = new PublishFragment();
@@ -69,6 +80,17 @@ public class MainActivity extends AppCompatActivity  implements FragmentCallBack
         });
 
     }
+
+    @Override
+    protected boolean isNeedInitBack() {
+        return false;
+    }
+
+    @Override
+    protected String getTopbarTitle() {
+        return null;
+    }
+
     private void switchContent(Fragment to) {
         if (mContent != to) {
             FragmentTransaction transaction = fragmentManager.beginTransaction();

@@ -5,7 +5,7 @@
     android:background="@color/back"
     android:orientation="vertical">
 
-    <include layout="@layout/top_commom2"/>
+    <include layout="@layout/main_top"/>
 
 <com.hskj.publishsystem.widget.XListView
     android:id="@+id/check_list"

@@ -77,12 +77,12 @@ public abstract class BaseActivity extends AppCompatActivity{
     protected void initBackBtn() {
 
     }
-    /**
-     * 左侧有返回键的标题栏
-     * <p>如果在此基础上还要加其他内容,比如右侧有文字按钮,可以获取该方法返回值继续设置其他内容
-     *
-     * @param title 标题
-     */
+//    /**
+//     * 左侧有返回键的标题栏
+//     * <p>如果在此基础上还要加其他内容,比如右侧有文字按钮,可以获取该方法返回值继续设置其他内容
+//     *
+//     * @param title 标题
+//     */
 //    protected TitleBuilder initBackTitle(String title) {
 //        return new TitleBuilder(this)
 //                .setTitleText(title)
@@ -95,23 +95,23 @@ public abstract class BaseActivity extends AppCompatActivity{
 //                });
 //    }
 
-    /**
-     * 跳转页面,无extra简易型
-     *
-     * @param tarActivity 目标页面
-     */
-    public void intent2Activity(Class<? extends Activity> tarActivity) {
-        ActivityUtils.intent2Activity(activity, tarActivity);
-    }
-
-    /**
-     * 跳转页面
-     *
-     * @param tarActivity 目标页面
-     */
-    public void intent2Activity(Class<? extends Activity> tarActivity, Bundle bundle) {
-        ActivityUtils.intent2Activity(activity, tarActivity, bundle);
-    }
+//    /**
+//     * 跳转页面,无extra简易型
+//     *
+//     * @param tarActivity 目标页面
+//     */
+//    public void intent2Activity(Class<? extends Activity> tarActivity) {
+//        ActivityUtils.intent2Activity(activity, tarActivity);
+//    }
+//
+//    /**
+//     * 跳转页面
+//     *
+//     * @param tarActivity 目标页面
+//     */
+//    public void intent2Activity(Class<? extends Activity> tarActivity, Bundle bundle) {
+//        ActivityUtils.intent2Activity(activity, tarActivity, bundle);
+//    }
 //    public void intent2Activity(Class<? extends Activity> tarActivity,Bundle bundle){
 //        Intent intent=new Intent(this,tarActivity);
 //        intent.putExtra(CodeConstants.BUNDLE_KEY,bundle);
