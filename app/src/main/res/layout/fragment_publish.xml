@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back">
+
+    <ImageView
+        android:id="@+id/imageView_top"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/nav_top_back" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="审核列表"
+        android:textColor="@color/text_black"
+        android:layout_marginTop="10dp"
+        android:textSize="22sp" />
+
+
+    <LinearLayout
+        android:id="@+id/publish_nav_top"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_view_nav"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:id="@+id/publish_not_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            >
+            <TextView
+                android:id="@+id/publish_not_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="未发布"
+                android:textColor="@color/text_black"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/publish_not_line"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/text_nav"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/publish_yet_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            >
+            <TextView
+                android:id="@+id/publish_yet_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已发布"
+                android:textColor="@color/text_gray"
+                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/publish_yet_line"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/transparent"
+                 />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/publish_fragment_con"
+        android:layout_below="@+id/publish_nav_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </RelativeLayout>
+
+
+</RelativeLayout>

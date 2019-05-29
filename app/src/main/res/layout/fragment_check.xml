@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back"
+    android:orientation="vertical">
+
+    <include layout="@layout/top_commom2"/>
+
+<com.hskj.publishsystem.widget.XListView
+    android:id="@+id/check_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:dividerHeight="10dp"
+    android:divider="@color/transparent"
+    android:scrollbars="none"
+    >
+</com.hskj.publishsystem.widget.XListView>
+
+</LinearLayout>

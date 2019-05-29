@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:id="@+id/main_activity_con"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/rGroup_activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#fff"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <RadioButton
+            android:id="@+id/rBtn_activity_main_main"
+            style="@style/main_radio_button"
+            android:checked="true"
+            android:drawableTop="@drawable/selector_menu_01"
+            android:text="@string/main_main"
+            android:textColor="@drawable/rb_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_activity_main_work_sheet"
+            style="@style/main_radio_button"
+            android:drawableTop="@drawable/selector_menu_02"
+            android:text="@string/main_work_sheet"
+            android:textColor="@drawable/rb_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_activity_main_news"
+            style="@style/main_radio_button"
+            android:drawableTop="@drawable/selector_menu_03"
+            android:text="@string/main_news"
+            android:textColor="@drawable/rb_text_color" />
+
+        <RadioButton
+            android:id="@+id/rb_activity_main_me"
+            style="@style/main_radio_button"
+            android:drawableTop="@drawable/selector_menu_04"
+            android:text="@string/main_me"
+            android:textColor="@drawable/rb_text_color" />
+    </RadioGroup>
+</LinearLayout>

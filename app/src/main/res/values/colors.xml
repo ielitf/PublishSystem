@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5c78A2</color>
+    <color name="colorPrimaryDark">#5c78A2</color>
+    <color name="colorAccent">#24A1FF</color>
+
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    <!-- 白色 -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <!-- 主题背景 -->
+    <color name="back">#F4F4F4</color>
+
+    <!-- 首页日历天气背景 -->
+    <color name="date_back">#24A1FF</color>
+    <!-- 首页目录字体颜色 -->
+    <color name="main_dir_text">#0065B1</color>
+    <!-- 导航目录字体颜色 -->
+    <color name="main_nav_text">#24A1FF</color>
+    <!-- 数字背景颜色 -->
+    <color name="num_back_color">#FF9800</color>
+    <!-- item背景颜色 -->
+    <color name="item_back_color">#FFFFFF</color>
+    <!-- item_title颜色 -->
+    <color name="item_title_color">#101010</color>
+    <!-- item_间隔颜色 -->
+    <color name="item_divide_color">#D5D5D5</color>
+
+    <!-- 工单详情里面的字体颜色 -->
+    <color name="sheet_detail_text1">#A2A1A1</color>
+    <color name="sheet_detail_text2">#101010</color>
+    <color name="sheet_detail_text3">#0065B1</color>
+    <color name="line1">#24A1FF</color>
+    <color name="line2">#D5D5D5</color>
+
+
+    <color name="text_black">#333333</color>
+    <color name="text_gray">#666666</color>
+    <color name="text_nav">#0E95F3</color>
+    <color name="text_check">#FF6B03</color>
+
+    <color name="top_back">#5c78A2</color>
+
+    <color name="base_background">#dddddd</color>
+    <color name="gray">#00ffffff</color>
+</resources>

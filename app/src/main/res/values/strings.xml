@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">发布系统</string>
+    <string name="main_main">首页</string>
+    <string name="main_work_sheet">审核</string>
+    <string name="main_news">发布</string>
+    <string name="main_me">我的</string>
+</resources>
