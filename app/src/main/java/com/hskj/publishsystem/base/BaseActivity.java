@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.hskj.publishsystem.R;
+import com.hskj.publishsystem.control.AppManager;
 import com.hskj.publishsystem.control.MyApplication;
 import com.hskj.publishsystem.utils.ActivityUtils;
 import com.hskj.publishsystem.utils.LogUtil;
@@ -28,7 +29,7 @@ public abstract class BaseActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         application = MyApplication.getMyApplication();
         activity = this;
-//        AppManager.getAppManager().addActivity(this);
+        AppManager.getAppManager().addActivity(this);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         initArgs();
         setLayout();
@@ -60,7 +61,7 @@ public abstract class BaseActivity extends AppCompatActivity{
         progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         progressDialog.setIndeterminate(false);
         progressDialog.setCancelable(true);
-        progressDialog.setMessage("正在搜索");
+        progressDialog.setMessage("正在下载数据");
     }
 
     protected void initArgs() {

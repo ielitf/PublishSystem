@@ -12,40 +12,50 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.hskj.publishsystem.R;
+import com.hskj.publishsystem.base.BaseFragment;
 
-public class PublishFragment extends Fragment implements View.OnClickListener{
+public class PublishFragment extends BaseFragment implements View.OnClickListener{
     private Fragment mContent = null;
     private PublishNotFragment publishNotFragment = null;
     private PublishYetFragment publishYetFragment = null;
     private FragmentManager fragmentManager;
     private LinearLayout publish_yet_ll, publish_not_ll;
     private TextView publish_not_tv, publish_not_line, publish_yet_tv, publish_yet_line;
-    private View contentView;
     private Context context;
     public PublishFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        contentView = inflater.inflate(R.layout.fragment_publish, container, false);
+    protected void onCreateView(Bundle savedInstanceState) {
+        setContentView(R.layout.fragment_publish);
         context = getActivity();
-        initViews(contentView);
+        initView(contentView);
         publish_yet_ll.setOnClickListener(this);
         publish_not_ll.setOnClickListener(this);
-
-
         fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         mContent = publishNotFragment;
         fragmentTransaction.add(R.id.publish_fragment_con, publishNotFragment);
         fragmentTransaction.commit();
-
-        return contentView;
     }
 
-    private void initViews(View contentView) {
+    @Override
+    protected boolean hasPopWindow() {
+        return false;
+    }
+
+    @Override
+    protected boolean isNeedInitBack() {
+        return false;
+    }
+
+    @Override
+    protected String getTopbarTitle() {
+        return null;
+    }
+
+    private void initView(View contentView) {
         publish_yet_ll = contentView.findViewById(R.id.publish_yet_ll);
         publish_not_ll = contentView.findViewById(R.id.publish_not_ll);
         publish_not_tv = contentView.findViewById(R.id.publish_not_tv);

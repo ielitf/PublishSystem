@@ -4,16 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/boot_page2_no_nav"
     tools:context=".ui.LauncherActivity">
 
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="启动页面"
-        android:gravity="center"
-        android:textSize="30sp"
-        />
 
 </android.support.constraint.ConstraintLayout>

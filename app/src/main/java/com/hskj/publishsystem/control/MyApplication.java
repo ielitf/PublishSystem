@@ -1,6 +1,9 @@
 package com.hskj.publishsystem.control;
 
 import android.app.Application;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.hskj.publishsystem.utils.SharedPreferenceManager;
@@ -18,6 +21,55 @@ import okhttp3.OkHttpClient;
 
 public class MyApplication extends Application {
 	private static final String SHARED_PREFERENCE_NAME = "PublishSystem_sp";
+	public static final String TAG = MyApplication.class.getSimpleName();
+	private static final String PREF_CUST_ID = "cust_id";//用户ID
+	private static final String PREF_CUST_NAME = "cust_name";//用户昵称
+	private static final String PREF_CUST_PHONE = "cust_phone";//用户手机号（注册手机号）
+	private static final String PREF_DISCUSS = "discuss_time";//评论
+	private static final String PREF_SIGN_IN = "sign_in_time";//签到
+	private static final String PREF_AVATAR_URL = "avatar_url";//头像url
+	private static final String PREF_JPUSH_ALIAS = "jpush_alias";//极光推送别名key
+	//    private String custIntegral;
+	private static final String PREF_IS_ALIAS_SET = "is_alias_set";//别名是否设置key
+	/**
+	 * 客户编号
+	 */
+	private String custId;
+	/**
+	 * 头像url
+	 */
+	private String avatarUrl;
+	/**
+	 * 昵称
+	 */
+	private String custName;
+	/**
+	 * 手机
+	 */
+	private String custPhone;
+	/**
+	 * 签到时间
+	 */
+//    private String lastModifiedTime;
+	private String signInTime;
+	/**
+	 * 评论时间
+	 */
+	private String discussTime;
+	/**
+	 * 积分
+	 */
+	private String custInt;
+	/**
+	 * 极光推送别名
+	 */
+	private String jpushAlias;
+	/**
+	 * 性别
+	 */
+//    private String user_gender;
+	private static final String PREF_CUST_INTEGRAL = "cust_integral";//用户积分
+	private boolean isAliasSet;
 	private static MyApplication application;
 	public static MyApplication getMyApplication() {
 		return application;
@@ -61,5 +113,249 @@ public class MyApplication extends Application {
 	}
 	public void showToast(String msg) {
 		Toast.makeText(application, msg + "", Toast.LENGTH_SHORT).show();
+	}
+
+	/**
+	 * 获取用户ID
+	 *
+	 * @return
+	 */
+	public String getCustId() {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		custId = preferences.getString(PREF_CUST_ID, null);
+		return custId;
+	}
+
+	/**
+	 * 设置用户ID
+	 *
+	 * @param custId
+	 */
+	public void setCustId(String custId) {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString(PREF_CUST_ID, custId).apply();
+	}
+
+	/**
+	 * 获取用户昵称
+	 *
+	 * @return
+	 */
+	public String getCustName() {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		custName = preferences.getString(PREF_CUST_NAME, "");
+		return custName;
+	}
+
+	/**
+	 * 设置用户昵称
+	 *
+	 * @param custName
+	 */
+	public void setCustName(String custName) {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString(PREF_CUST_NAME, custName).apply();
+	}
+
+	/**
+	 * 设置手机
+	 *
+	 * @param custPhone
+	 */
+	public boolean setCustPhone(String custPhone) {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		SharedPreferences.Editor editor = preferences.edit();
+		return editor.putString(PREF_CUST_PHONE, custPhone).commit();
+	}
+
+	/**
+	 * 获取手机
+	 *
+	 * @return
+	 */
+	public String getCustPhone() {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		custPhone = preferences.getString(PREF_CUST_PHONE, "");
+		return custPhone;
+	}
+
+	/**
+	 * 获取积分
+	 *
+	 * @return
+	 */
+	public String getCustInt() {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		custInt = preferences.getString(PREF_CUST_INTEGRAL, "");
+		return custInt;
+	}
+
+	/**
+	 * 设置积分
+	 *
+	 * @param custInt
+	 */
+	public void setCustInt(String custInt) {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString(PREF_CUST_INTEGRAL, custInt).apply();
+
+	}
+
+	/**
+	 * 获取上一次评论时间
+	 *
+	 * @return
+	 */
+	public String getDiscussTime() {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		discussTime = preferences.getString(PREF_DISCUSS, null);
+		return discussTime;
+	}
+
+	/**
+	 * 设置最后评论时间
+	 *
+	 * @param discussTime
+	 */
+	public void setDiscussTime(String discussTime) {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString(PREF_DISCUSS, discussTime).apply();
+	}
+
+	/**
+	 * 获取上一次的签到时间
+	 *
+	 * @return
+	 */
+	public String getSignInTime() {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		signInTime = preferences.getString(PREF_SIGN_IN, null);
+		return signInTime;
+	}
+
+	/**
+	 * 设置最新签到时间
+	 *
+	 * @param signInTime
+	 */
+
+	public void setSignInTime(String signInTime) {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString(PREF_SIGN_IN, signInTime).commit();
+	}
+
+	/**
+	 * 获取头像url
+	 *
+	 * @return
+	 */
+	public String getAvatarUrl() {
+		if (TextUtils.isEmpty(avatarUrl)) {
+			SharedPreferences preferences = PreferenceManager
+					.getDefaultSharedPreferences(MyApplication.this);
+			avatarUrl = preferences.getString(PREF_AVATAR_URL, null);
+		}
+
+		return avatarUrl;
+	}
+
+	/**
+	 * 设置头像url
+	 *
+	 * @param avatarUrl
+	 */
+	public void setAvatarUrl(String avatarUrl) {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		SharedPreferences.Editor editor = preferences.edit();
+//		editor.putString(PREF_PORTRAIT_URL, avatarUrl).commit();
+		if (editor.putString(PREF_AVATAR_URL, avatarUrl).commit()) {
+			this.avatarUrl = avatarUrl;
+		}
+	}
+
+	public String getJpushAlias() {
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MyApplication.this);
+		jpushAlias = preferences.getString(PREF_JPUSH_ALIAS, "");
+		return jpushAlias;
+	}
+
+	public void setJpushAlias(String jpushAlias) {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString(PREF_JPUSH_ALIAS, jpushAlias).apply();
+	}
+
+	public boolean getIsAliasSet() {
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MyApplication.this);
+		isAliasSet = preferences.getBoolean(PREF_IS_ALIAS_SET, false);
+		return isAliasSet;
+	}
+
+	public void setIsAliasSet(boolean isAliasSet) {
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MyApplication.this);
+		preferences.edit().putBoolean(PREF_IS_ALIAS_SET, isAliasSet).apply();
+
+	}
+
+	public String getCachedMainPage() {
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MyApplication.this);
+		String cachedData = preferences.getString(CodeConstants.MAIN_PAGE_CACHED, "");
+		return cachedData;
+	}
+
+	public void setCachedMainPage(String json) {
+		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(MyApplication.this);
+		preferences.edit().putString(CodeConstants.MAIN_PAGE_CACHED, json).commit();
+	}
+
+	/**
+	 * 判断是否登录
+	 *
+	 * @return boolean
+	 */
+
+	public boolean isLogin() {
+		if (TextUtils.isEmpty(getCustId()) || getCustId().equals("null")) {
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * 退出登录
+	 */
+	public void reSet() {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		SharedPreferences.Editor edit = preferences.edit();
+		edit.clear();
+		edit.commit();
+	}
+
+	public boolean logout() {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		SharedPreferences.Editor edit = preferences.edit();
+		edit.clear();
+		return edit.commit();
 	}
 }

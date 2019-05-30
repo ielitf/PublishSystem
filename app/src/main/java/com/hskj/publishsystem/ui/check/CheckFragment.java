@@ -69,7 +69,7 @@ public class CheckFragment extends BaseFragment implements XListView.IXListViewL
 
     @Override
     protected boolean isNeedInitBack() {
-        return true;
+        return false;
     }
 
     @Override

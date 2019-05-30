@@ -8,92 +8,98 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/me_login"
+        android:background="@color/me_ba"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@mipmap/nav_top_back"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:orientation="vertical">
+
+        <com.hskj.publishsystem.widget.RoundImageView
+            android:id="@+id/me_touxiang"
+            android:clickable="true"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@mipmap/me_head2" />
+
+        <TextView
+            android:id="@+id/cust_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/space_20"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/me_jifen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/space_14"
+            android:visibility="gone"
+            android:layout_marginTop="5dp"/>
+
+        <Button
+            android:id="@+id/me_qiandao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="30dp"
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/me_nologin"
+        android:background="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
         android:orientation="horizontal">
 
         <com.hskj.publishsystem.widget.RoundImageView
-            android:id="@+id/headImg"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_margin="12dp"
-            android:scaleType="fitXY"
-            android:src="@mipmap/me_head2" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="22dp"
+            android:layout_marginLeft="28dp"
+            android:layout_gravity="center"
+            android:background="@drawable/default_head_icon" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center_vertical|center_horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/login"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:background="@drawable/denglu_back"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:text="登录/注册"
+                android:padding="1dp"/>
+
+            <TextView
+                android:layout_marginTop="2dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:textColor="@color/grey"
+                android:text="您好，欢迎使用发布系统"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:text="李逍遥"
-                    android:textColor="@color/text_black"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="20dp"
-                    android:text="编辑"
-                    android:textColor="@color/text_check"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:text="15093249729"
-                    android:textColor="@color/text_gray"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="10dp"
-                    android:text="工作中"
-                    android:textColor="@color/text_gray"
-                    android:textSize="12sp" />
-
-                <Switch
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:checked="true" />
-            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -200,6 +206,11 @@
         android:id="@+id/me_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:dividerHeight="10dp"
+        android:divider="@color/transparent"
+        android:scrollbars="none"
         android:layout_marginTop="11dp" />
 
 </LinearLayout>

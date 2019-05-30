@@ -16,7 +16,7 @@ public class CodeConstants {
     public static String START_DATA = "startData";
     public static String END_DATA = "endData";
 
-
+    public static final String MAIN_PAGE_CACHED="main_page_cached";
     public static String HEADERS = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjcmVhdGVUaW1lIjoxNTU5MDk3NTcyODk0LCJleHAiOjE1NjAzOTM1NzIsInVzZXJuYW1lIjoid2FuZ3l1ZSJ9.QbMTOHpdLebVRfx_ryw_6of-6ofGbZOSgvxJyBARyqg";
 
 

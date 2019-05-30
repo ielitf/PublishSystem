@@ -11,13 +11,16 @@
     <color name="black">#000000</color>
     <!-- 主题背景 -->
     <color name="back">#F4F4F4</color>
-
+    <!-- 灰色 -->
+    <color name="grey">#808080</color>
     <!-- 首页日历天气背景 -->
     <color name="date_back">#24A1FF</color>
     <!-- 首页目录字体颜色 -->
     <color name="main_dir_text">#0065B1</color>
     <!-- 导航目录字体颜色 -->
     <color name="main_nav_text">#24A1FF</color>
+    <!-- 我的头部北京颜色 -->
+    <color name="me_ba">#0085CF</color>
     <!-- 数字背景颜色 -->
     <color name="num_back_color">#FF9800</color>
     <!-- item背景颜色 -->

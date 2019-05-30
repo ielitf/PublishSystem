@@ -3,12 +3,12 @@ package com.hskj.publishsystem.ui;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.RadioGroup;
-
 import com.hskj.publishsystem.R;
 import com.hskj.publishsystem.base.BaseActivity;
+import com.hskj.publishsystem.control.AppManager;
 import com.hskj.publishsystem.mylistener.FragmentCallBack;
 import com.hskj.publishsystem.ui.check.CheckFragment;
 import com.hskj.publishsystem.ui.home.HomeFragment;
@@ -80,7 +80,24 @@ public class MainActivity extends BaseActivity  implements FragmentCallBack {
         });
 
     }
+    long waitTime = 2000;
+    long touchTime = 0;
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (KeyEvent.KEYCODE_BACK == keyCode) {
+            long currentTime = System.currentTimeMillis();
+            if ((currentTime - touchTime) >= waitTime) {
+               showToast("再按一次，退出程序");
+                touchTime = currentTime;
+            } else {
+//                finish();
+                AppManager.getAppManager().finishAllActivity();
+            }
+            return true;
+        }
+        return false;
+    }
     @Override
     protected boolean isNeedInitBack() {
         return false;
