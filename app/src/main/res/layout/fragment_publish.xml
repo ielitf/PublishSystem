@@ -7,7 +7,7 @@
     <ImageView
         android:id="@+id/imageView_top"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="60dp"
         android:scaleType="centerCrop"
         android:src="@mipmap/nav_top_back" />
 
@@ -23,10 +23,10 @@
     <LinearLayout
         android:id="@+id/publish_nav_top"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/title"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/bg_view_nav"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
@@ -40,7 +40,7 @@
             android:layout_marginRight="30dp"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:padding="10dp"
+            android:padding="5dp"
             >
             <TextView
                 android:id="@+id/publish_not_tv"
@@ -65,7 +65,7 @@
             android:layout_marginRight="30dp"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:padding="10dp"
+            android:padding="5dp"
             >
             <TextView
                 android:id="@+id/publish_yet_tv"

@@ -20,7 +20,8 @@
         android:layout_alignParentLeft="true"
         android:background="#fff"
         android:orientation="horizontal"
-        android:padding="5dp" >
+        android:paddingTop="2dp"
+        >
 
         <RadioButton
             android:id="@+id/rBtn_activity_main_main"
