@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:text="排期名称："
                 android:textColor="@color/text_black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_content_big" />
 
             <TextView
                 android:id="@+id/check_detail_title"
@@ -36,7 +36,7 @@
                 android:maxLines="1"
                 android:text="北京地铁五号线排期"
                 android:textColor="@color/text_black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_content_big" />
         </LinearLayout>
 
         <LinearLayout
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:text="排期时间："
                 android:textColor="@color/text_black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_content_big" />
 
             <TextView
                 android:id="@+id/check_detail_time"
@@ -60,7 +60,7 @@
                 android:singleLine="true"
                 android:text="2019.04.20-2019.05.20"
                 android:textColor="@color/text_black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_content_big" />
         </LinearLayout>
 
         <LinearLayout
@@ -81,7 +81,7 @@
                 android:layout_weight="1"
                 android:text="媒体内容"
                 android:textColor="@color/text_black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_content_big" />
         </LinearLayout>
 
         <ListView
@@ -112,7 +112,7 @@
                 android:layout_weight="1"
                 android:text="审核意见"
                 android:textColor="@color/text_black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/text_content_big" />
         </LinearLayout>
 
         <EditText
@@ -123,7 +123,7 @@
             android:background="@drawable/bg_edittext"
             android:gravity="start"
             android:text="张瑞秋是个坏人\(^o^)/~"
-            android:textSize="12sp"
+            android:textSize="@dimen/text_content"
             android:textColor="@color/text_gray"
             />
 

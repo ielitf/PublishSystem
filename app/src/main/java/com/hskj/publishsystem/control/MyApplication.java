@@ -22,6 +22,10 @@ import okhttp3.OkHttpClient;
 public class MyApplication extends Application {
 	private static final String SHARED_PREFERENCE_NAME = "PublishSystem_sp";
 	public static final String TAG = MyApplication.class.getSimpleName();
+
+	private static final String PREF_CUST_ACCOUNT_NUMBER = "cust_account_number";//账号
+	private static final String PREF_CUST_ACCOUNT_PASSWORD = "cust_account_password";//密码
+
 	private static final String PREF_CUST_ID = "cust_id";//用户ID
 	private static final String PREF_CUST_NAME = "cust_name";//用户昵称
 	private static final String PREF_CUST_PHONE = "cust_phone";//用户手机号（注册手机号）
@@ -68,6 +72,7 @@ public class MyApplication extends Application {
 	 * 性别
 	 */
 //    private String user_gender;
+
 	private static final String PREF_CUST_INTEGRAL = "cust_integral";//用户积分
 	private boolean isAliasSet;
 	private static MyApplication application;
@@ -137,6 +142,52 @@ public class MyApplication extends Application {
 				.getDefaultSharedPreferences(MyApplication.this);
 		SharedPreferences.Editor editor = preferences.edit();
 		editor.putString(PREF_CUST_ID, custId).apply();
+	}
+	/**
+	 * 获取用户账号
+	 *
+	 * @return
+	 */
+	public String getCustAccountNumber() {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		custId = preferences.getString(PREF_CUST_ACCOUNT_NUMBER, null);
+		return custId;
+	}
+
+	/**
+	 * 设置用户账号
+	 *
+	 * @param accountNumber
+	 */
+	public void setCustAccountNumber(String accountNumber) {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString(PREF_CUST_ACCOUNT_NUMBER, accountNumber).apply();
+	}
+	/**
+	 * 获取用户密码
+	 *
+	 * @return
+	 */
+	public String getCustAccountPassword() {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		custId = preferences.getString(PREF_CUST_ACCOUNT_PASSWORD, null);
+		return custId;
+	}
+
+	/**
+	 * 设置用户密码
+	 *
+	 * @param accountPassword
+	 */
+	public void setCustAccountPassword(String accountPassword) {
+		SharedPreferences preferences = PreferenceManager
+				.getDefaultSharedPreferences(MyApplication.this);
+		SharedPreferences.Editor editor = preferences.edit();
+		editor.putString(PREF_CUST_ACCOUNT_PASSWORD, accountPassword).apply();
 	}
 
 	/**

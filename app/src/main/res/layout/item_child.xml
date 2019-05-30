@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:text="子"
+        android:textSize="@dimen/text_content"
         />
 
 </LinearLayout>

@@ -19,7 +19,7 @@
         android:text="发布列表"
         android:textColor="@color/text_black"
         android:layout_marginTop="10dp"
-        android:textSize="22sp" />
+        android:textSize="@dimen/text_title_bar" />
     <LinearLayout
         android:id="@+id/publish_nav_top"
         android:layout_width="wrap_content"
@@ -48,11 +48,11 @@
                 android:layout_height="wrap_content"
                 android:text="未发布"
                 android:textColor="@color/text_black"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_title_bar" />
             <TextView
                 android:id="@+id/publish_not_line"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
+                android:layout_height="2dp"
                 android:background="@color/text_nav"
                  />
         </LinearLayout>
@@ -73,11 +73,11 @@
                 android:layout_height="wrap_content"
                 android:text="已发布"
                 android:textColor="@color/text_gray"
-                android:textSize="20sp" />
+                android:textSize="@dimen/text_title_bar" />
             <TextView
                 android:id="@+id/publish_yet_line"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
+                android:layout_height="2dp"
                 android:background="@color/transparent"
                  />
         </LinearLayout>

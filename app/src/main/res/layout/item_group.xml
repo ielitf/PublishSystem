@@ -11,7 +11,7 @@
         android:id="@+id/group_ico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginLeft="30dp"
         android:src="@mipmap/version"/>
 
     <TextView
@@ -21,6 +21,7 @@
         android:gravity="center_vertical"
         android:layout_marginLeft="5dp"
         android:text="组"
+        android:textSize="@dimen/text_content_big"
         />
 
 </LinearLayout>

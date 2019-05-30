@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/app_logo" />
 
     <TextView
         android:id="@+id/menu"
@@ -20,6 +20,6 @@
         android:layout_alignParentLeft="true"
         android:text="注销"
         android:textColor="@color/main_nav_text"
-        android:textSize="30sp" />
+        android:textSize="@dimen/text_title_bar" />
 
 </RelativeLayout>

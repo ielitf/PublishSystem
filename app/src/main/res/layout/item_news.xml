@@ -6,9 +6,9 @@
     android:gravity="center_vertical"
     android:orientation="vertical"
     android:paddingLeft="5dp"
-    android:paddingTop="15dp"
+    android:paddingTop="10dp"
     android:paddingRight="5dp"
-    android:paddingBottom="15dp">
+    android:paddingBottom="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
             android:layout_weight="1"
             android:text="排期名称：上海面包店"
             android:textColor="@color/text_black"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_content_big" />
 
         <TextView
             android:id="@+id/news_item_control"
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:text="审核>"
             android:textColor="@color/text_check"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_content_big" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,7 +55,7 @@
             android:layout_marginLeft="5dp"
             android:text="开始时间："
             android:textColor="@color/text_gray"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_content" />
 
         <TextView
             android:id="@+id/news_item_startTime"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:text="2019.05.23"
             android:textColor="@color/text_gray"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_content" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -82,7 +82,7 @@
             android:layout_marginLeft="5dp"
             android:text="结束时间："
             android:textColor="@color/text_gray"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_content" />
 
         <TextView
             android:id="@+id/news_item_endTime"
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:text="2019.06.20"
             android:textColor="@color/text_gray"
-            android:textSize="16sp" />
+            android:textSize="@dimen/text_content" />
     </LinearLayout>
 
 

@@ -5,12 +5,15 @@ import android.content.SharedPreferences;
 
 public class SharedPreferenceManager {
 	    static SharedPreferences sp;
- 
+
 	    public static void init(Context context, String name) {
 	        sp = context.getSharedPreferences(name, Context.MODE_PRIVATE);
 	    }
-	    
-        private static final String CACHED_HOMEPAGE_DATA="cached_homepage_data";
+
+	/**
+	 * 缓存首页数据
+	 */
+	private static final String CACHED_HOMEPAGE_DATA="cached_homepage_data";
 
         public static void setCachedHomepageData(String jsonStr){
         	if (null != sp) {
@@ -23,8 +26,10 @@ public class SharedPreferenceManager {
  	        }
  	        return null;
         }
-        
-//
+
+	/**
+	 * 是否是第一次使用
+	 */
 	    private static final String IS_FIRST_USE="Is_app_first_use";
 
 	    public static void setIsFirstUse(boolean value){
@@ -38,8 +43,7 @@ public class SharedPreferenceManager {
 	        }
 	        return true;
 	    }
-	    
-//	    public static boolean isLogin(){
+	//	    public static boolean isLogin(){
 //	    	String custName=getCachedUsername();
 //	    	String custId=getCachedCustId();
 //	    	if (TextUtils.isEmpty(custId)||custId.equals("null")) {
@@ -92,74 +96,4 @@ public class SharedPreferenceManager {
 //	        }
 //	        return null;
 //	    }
-//	    private static final String KEY_CACHED_AVATAR_PATH = "Chengde__cached_avatar_path";
-//
-//	    public static void setCachedAvatarPath(String path) {
-//	        if (null != sp) {
-//	            sp.edit().putString(KEY_CACHED_AVATAR_PATH, path).commit();
-//	        }
-//	    }
-//
-//	    public static String getCachedAvatarPath() {
-//	        if (null != sp) {
-//	            return sp.getString(KEY_CACHED_AVATAR_PATH, null);
-//	        }
-//	        return null;
-//	    }
-//	    private static final String KEY_CACHED_FIX_PROFILE_FLAG = "fixProfileFlag";
-//
-//	    public static void setCachedFixProfileFlag(boolean value) {
-//	        if(null != sp){
-//	            sp.edit().putBoolean(KEY_CACHED_FIX_PROFILE_FLAG, value).commit();
-//	        }
-//	    }
-//
-//	    public static boolean getCachedFixProfileFlag(){
-//	        if(null != sp){
-//	            return sp.getBoolean(KEY_CACHED_FIX_PROFILE_FLAG, false);
-//	        }
-//	        return false;
-//	    }
-//
-//	    private static final String SOFT_KEYBOARD_HEIGHT = "SoftKeyboardHeight";
-//
-//	    public static void setCachedKeyboardHeight(int height){
-//	        if(null != sp){
-//	            sp.edit().putInt(SOFT_KEYBOARD_HEIGHT, height).commit();
-//	        }
-//	    }
-//
-//	    public static int getCachedKeyboardHeight(){
-//	        if(null != sp){
-//	            return sp.getInt(SOFT_KEYBOARD_HEIGHT, 0);
-//	        }
-//	        return 0;
-//	    }
-//
-//	    private static final String WRITABLE_FLAG = "writable";
-//	    public static void setCachedWritableFlag(boolean value){
-//	        if(null != sp){
-//	            sp.edit().putBoolean(WRITABLE_FLAG, value).commit();
-//	        }
-//	    }
-//
-//	    public static boolean getCachedWritableFlag(){
-//	        if(null != sp){
-//	            return sp.getBoolean(WRITABLE_FLAG, true);
-//	        }
-//	        return true;
-//	    }
-	 /*   private static final String SELECTED_IP = "WSDL_URL";
-	    public static void setSelectedIp(String value){
-	    	if(null != sp){
-	            sp.edit().putString(SELECTED_IP, value+CodeConstants.URL_SUFFIX).commit();
-	        }
-	    }
-	    public static String getSelectedIp(){
-	    	 if(null != sp){
-		            return sp.getString(SELECTED_IP, CodeConstants.WSDL_URL);
-		        }
-		        return CodeConstants.WSDL_URL;
-	    	
-	    }*/
 }

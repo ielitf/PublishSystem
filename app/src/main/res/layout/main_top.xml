@@ -22,9 +22,9 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center_vertical"
             android:padding="10dp"
-            android:text="寺庙一览"
+            android:text="未知标题"
             android:textColor="@color/text_black"
-            android:textSize="@dimen/space_18" />
+            android:textSize="@dimen/text_title_bar" />
 
         <ImageView
             android:id="@+id/poping_image"
@@ -69,7 +69,7 @@
             android:layout_marginRight="10dp"
             android:text="完成"
             android:padding="@dimen/space_10"
-            android:textSize="@dimen/space_18"
+            android:textSize="@dimen/text_title_bar"
             android:textColor="@color/white"
             />
 

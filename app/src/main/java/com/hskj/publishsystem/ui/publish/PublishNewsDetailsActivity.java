@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import com.hskj.publishsystem.R;
 import com.hskj.publishsystem.adapter.ExpandableListViewAdapter;
+import com.hskj.publishsystem.base.BaseActivity;
 import com.hskj.publishsystem.bean.ExpandListChildBean;
 import com.hskj.publishsystem.bean.NewsItemBean;
 import com.hskj.publishsystem.data.ExpandChildData;
@@ -15,7 +16,7 @@ import com.hskj.publishsystem.data.NewsData;
 
 import java.util.ArrayList;
 
-public class PublishNewsDetailsActivity extends AppCompatActivity {
+public class PublishNewsDetailsActivity extends BaseActivity {
     private ExpandableListView listView;
     private ExpandableListViewAdapter adapter;
     private ImageView arrowIma;
@@ -24,11 +25,13 @@ public class PublishNewsDetailsActivity extends AppCompatActivity {
     private ArrayList<ArrayList<ExpandListChildBean>> childlist = new ArrayList<>();
     private ArrayList<ExpandListChildBean> list;
     private int lastClick = -1;//上一次点击的group的position
-
+    @Override
+    protected void setLayout() {
+        setContentView(R.layout.activity_publish_news_details);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_publish_news_details);
         listView = findViewById(R.id.publish_detail_device);
         initDate();
         adapter = new ExpandableListViewAdapter(this, grouplist, childlist);
@@ -59,6 +62,22 @@ public class PublishNewsDetailsActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+
+    @Override
+    protected void initViews() {
+
+    }
+
+    @Override
+    protected boolean isNeedInitBack() {
+        return true;
+    }
+
+    @Override
+    protected String getTopbarTitle() {
+        return "发布详情";
     }
 
     private void initDate() {

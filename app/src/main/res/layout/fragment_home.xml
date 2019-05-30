@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="260dp"
+        android:layout_height="200dp"
         android:background="@mipmap/home_top_back"></LinearLayout>
 
     <LinearLayout
@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="待审核"
-                android:textSize="18dp"/>
+                android:textSize="@dimen/space_12"/>
         </LinearLayout>
 
         <LinearLayout
@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="待发布"
-                android:textSize="18dp"/>
+                android:textSize="@dimen/space_12"/>
         </LinearLayout>
 
 

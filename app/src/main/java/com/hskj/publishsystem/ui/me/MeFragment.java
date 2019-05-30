@@ -11,6 +11,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -24,12 +25,13 @@ import com.hskj.publishsystem.R;
 import com.hskj.publishsystem.adapter.MeItemAdapter;
 import com.hskj.publishsystem.base.BaseFragment;
 import com.hskj.publishsystem.bean.MeItemBean;
+import com.hskj.publishsystem.control.AppManager;
 import com.hskj.publishsystem.utils.LogUtil;
 import com.hskj.publishsystem.widget.RoundImageView;
 
 import java.util.ArrayList;
 
-public class MeFragment extends BaseFragment implements View.OnClickListener {
+public class MeFragment extends BaseFragment implements View.OnClickListener, AdapterView.OnItemClickListener {
     private LinearLayout linearLayout_main;
     private Button btnNormal, btnShowList, btnCostom;
     private RoundImageView headImg;
@@ -54,17 +56,27 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     @Override
     protected void onCreateView(Bundle savedInstanceState) {
         setContentView(R.layout.fragment_me);
+        initViews();
+        initData();
+        adapter = new MeItemAdapter(activity, list);
+        listView.setAdapter(adapter);
+
+    }
+
+    private void initViews() {
         listView = (ListView) findViewById(R.id.me_list);
         linearLayout_main = (LinearLayout) findViewById(R.id.linearLayout_main);
         headImg = (RoundImageView) findViewById(R.id.me_touxiang);
         login_name = (TextView) findViewById(R.id.cust_name_tv);
-        login_name.setOnClickListener(this);
         headImg.setOnClickListener(this);
+        login_name.setOnClickListener(this);
+        listView.setOnItemClickListener(this);
+    }
+
+    private void initData() {
         list.add(new MeItemBean(R.mipmap.me_system_update, "系统更新"));
         list.add(new MeItemBean(R.mipmap.me_clear_cache, "清理缓存"));
         list.add(new MeItemBean(R.mipmap.me_system_exit, "退出系统"));
-        adapter = new MeItemAdapter(activity, list);
-        listView.setAdapter(adapter);
     }
 
     @Override
@@ -122,10 +134,27 @@ public class MeFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.cust_name_tv:
-                startActivity(new Intent(activity,LoginActivity.class));
+                startActivity(new Intent(activity, LoginActivity.class));
                 break;
             case R.id.me_touxiang:
                 ShowCostomPopupWindow();
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        switch (position) {
+            case 0://系统更新
+                showToast("敬请期待");
+                break;
+            case 1://清理缓存
+                showToast("敬请期待");
+                break;
+            case 2://退出系统
+                AppManager.getAppManager().finishAllActivity();
                 break;
             default:
                 break;

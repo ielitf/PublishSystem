@@ -12,8 +12,8 @@
         android:background="@color/me_ba"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="30dp"
-        android:paddingBottom="30dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:orientation="vertical">
 
         <com.hskj.publishsystem.widget.RoundImageView
@@ -31,8 +31,8 @@
             android:text="登录"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/white"
-            android:textSize="@dimen/space_20"
-            android:layout_marginTop="10dp"/>
+            android:textSize="@dimen/text_content_big"
+            android:layout_marginTop="5dp"/>
 
         <TextView
             android:id="@+id/me_jifen"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/white"
-            android:textSize="@dimen/space_14"
+            android:textSize="@dimen/text_content_big"
             android:visibility="gone"
             android:layout_marginTop="5dp"/>
 
@@ -102,20 +102,19 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="11dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.3" />
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="11dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/white"
             android:gravity="center"
@@ -125,7 +124,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="权限等级"
-                android:textSize="@dimen/space_12" />
+                android:textSize="@dimen/text_content" />
 
 
             <TextView
@@ -134,18 +133,17 @@
                 android:layout_marginTop="3dp"
                 android:text="一级"
                 android:textColor="@color/text_check"
-                android:textSize="@dimen/space_18" />
+                android:textSize="@dimen/text_content_big" />
         </LinearLayout>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.3" />
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="11dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/white"
             android:gravity="center"
@@ -154,7 +152,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="审核数量"
-                android:textSize="@dimen/space_12" />
+                android:textSize="@dimen/text_content" />
 
 
             <TextView
@@ -163,19 +161,18 @@
                 android:layout_marginTop="3dp"
                 android:text="341"
                 android:textColor="@color/text_check"
-                android:textSize="@dimen/space_18" />
+                android:textSize="@dimen/text_content_big" />
 
         </LinearLayout>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.3" />
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="11dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/white"
             android:gravity="center"
@@ -184,7 +181,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="发布数量"
-                android:textSize="@dimen/space_12" />
+                android:textSize="@dimen/text_content" />
 
 
             <TextView
@@ -193,13 +190,13 @@
                 android:layout_marginTop="3dp"
                 android:text="218"
                 android:textColor="@color/text_check"
-                android:textSize="@dimen/space_18" />
+                android:textSize="@dimen/text_content_big" />
         </LinearLayout>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.3" />
     </LinearLayout>
 
     <ListView
