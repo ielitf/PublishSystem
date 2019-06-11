@@ -4,19 +4,23 @@
     android:layout_height="match_parent"
     android:background="@color/back"
     android:orientation="vertical">
-
     <include layout="@layout/main_top"/>
-
-<com.hskj.publishsystem.widget.XListView
-    android:id="@+id/check_list"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp"
-    android:dividerHeight="5dp"
-    android:divider="@color/transparent"
-    android:scrollbars="none"
-    >
-</com.hskj.publishsystem.widget.XListView>
-
+    <com.danggui.publishsystem.widget.PullToRefreshLayout
+        android:id="@+id/refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        >
+        <include layout="@layout/allview_refresh_head" />
+        <!-- 支持所有实现Pullable接口的View -->
+        <com.danggui.publishsystem.widget.pullableview.PullableListView
+            android:id="@+id/check_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="5dp"
+            android:divider="@color/transparent"
+            android:scrollbars="none" />
+        <include layout="@layout/allview_load_more" />
+    </com.danggui.publishsystem.widget.PullToRefreshLayout>
 </LinearLayout>

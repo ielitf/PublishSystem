@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.danggui.publishsystem.widget.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/refresh_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
     android:background="@color/back">
 
-
-    <com.hskj.publishsystem.widget.XListView
+    <include layout="@layout/allview_refresh_head" />
+    <!-- 支持所有实现Pullable接口的View -->
+    <com.danggui.publishsystem.widget.pullableview.PullableListView
         android:id="@+id/publish_not_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/publish_nav_top"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:divider="@color/transparent"
         android:dividerHeight="5dp"
-        android:scrollbars="none">
-    </com.hskj.publishsystem.widget.XListView>
+        android:scrollbars="none" />
 
-</RelativeLayout>
+    <include layout="@layout/allview_load_more" />
+</com.danggui.publishsystem.widget.PullToRefreshLayout>

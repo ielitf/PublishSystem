@@ -19,6 +19,7 @@
     <dimen name="space_20">20sp</dimen>
     <dimen name="space_22">22sp</dimen>
     <dimen name="space_30">30sp</dimen>
+    <dimen name="space_40">40sp</dimen>
 
     <dimen name="px1_dp">0.3dp</dimen>
     <dimen name="px2_dp">0.7dp</dimen>

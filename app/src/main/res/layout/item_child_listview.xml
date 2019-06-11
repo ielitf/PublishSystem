@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <com.hskj.publishsystem.widget.NoScrollListView
+    <com.danggui.publishsystem.widget.NoScrollListView
         android:id="@+id/item_child_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,6 +15,6 @@
         android:scrollbars="none"
         >
 
-    </com.hskj.publishsystem.widget.NoScrollListView>
+    </com.danggui.publishsystem.widget.NoScrollListView>
 
 </RelativeLayout>

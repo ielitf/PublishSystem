@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hskj.publishsystem">
+    package="com.danggui.publishsystem">
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".control.MyApplication"
@@ -10,12 +13,31 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ui.LauncherViewPagerActivity"></activity>
-        <activity android:name=".ui.MainActivity" />
-        <activity android:name=".ui.me.LoginActivity" />
-        <activity android:name=".ui.publish.PublishNewsDetailsActivity" />
-        <activity android:name=".ui.check.CheckNewsDetailsActivity" />
-        <activity android:name=".ui.LauncherActivity">
+        <activity
+            android:name=".ui.me.VersionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.LauncherViewPagerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.check.CheckDetailsSchedulePreviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.me.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.check.CheckNewsDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.publish.PublishNewsDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.LauncherActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />

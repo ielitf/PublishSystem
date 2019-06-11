@@ -16,7 +16,7 @@
         android:paddingBottom="10dp"
         android:orientation="vertical">
 
-        <com.hskj.publishsystem.widget.RoundImageView
+        <com.danggui.publishsystem.widget.RoundImageView
             android:id="@+id/me_touxiang"
             android:clickable="true"
             android:layout_width="60dp"
@@ -63,7 +63,7 @@
         android:visibility="gone"
         android:orientation="horizontal">
 
-        <com.hskj.publishsystem.widget.RoundImageView
+        <com.danggui.publishsystem.widget.RoundImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="22dp"

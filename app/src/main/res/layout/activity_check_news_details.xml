@@ -118,7 +118,7 @@
         <EditText
             android:id="@+id/check_detail_edit"
             android:layout_width="match_parent"
-            android:layout_height="168dp"
+            android:layout_height="100dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/bg_edittext"
             android:gravity="start"

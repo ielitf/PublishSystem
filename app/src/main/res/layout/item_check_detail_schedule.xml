@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="@color/white"
+    >
+    <TextView
+        android:id="@+id/check_detail_schedule_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_20"
+        android:layout_alignParentLeft="true"
+        android:text="节目一："
+        android:textSize="@dimen/text_content"
+        />
+    <TextView
+        android:id="@+id/check_detail_schedule_com"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/check_detail_schedule_title"
+        android:layout_toLeftOf="@+id/check_detail_schedule_preview"
+        android:text="节目"
+        android:gravity="center"
+        android:textSize="@dimen/text_content"
+        />
+    <TextView
+        android:id="@+id/check_detail_schedule_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/space_20"
+        android:text="预览"
+        android:textColor="@color/text_check"
+        android:textSize="@dimen/text_content"
+        />
+
+</RelativeLayout>

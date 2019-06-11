@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back">
+
+    <include
+        android:id="@+id/topbar"
+        layout="@layout/main_top" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/app_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text="发布系统 Android版"
+            android:textColor="@color/black"
+            android:textSize="@dimen/space_22" />
+
+        <TextView
+            android:id="@+id/ver_current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text="当前版本："
+            android:textColor="@color/grey"
+            android:textSize="@dimen/space_16" />
+
+        <TextView
+            android:id="@+id/ver_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/space_16" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ver_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="点击更新" />
+
+</RelativeLayout>

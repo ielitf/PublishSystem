@@ -10,6 +10,13 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="buttonStyle">@style/baseButtonStyle</item>
+    </style>
+    <style name="baseButtonStyle" parent="@style/Widget.AppCompat.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
     </style>
     <style name="main_radio_button">
         <item name="android:layout_width">0dp</item>

@@ -9,12 +9,13 @@
 
     >
 
-    <ImageView
-        android:id="@+id/child_ico"
+    <CheckBox
+        android:id="@+id/child_checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:src="@mipmap/version"/>
+        android:focusable="false"
+        />
 
     <TextView
         android:id="@+id/child_tv"
