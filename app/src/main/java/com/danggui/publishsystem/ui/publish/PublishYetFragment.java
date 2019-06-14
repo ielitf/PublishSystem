@@ -44,7 +44,7 @@ public class PublishYetFragment extends BaseFragment {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                showDialog("是否确定取消发布？");
+                showDialog("是否确定取消发布？",position);
             }
         });
         pullToRefreshLayout.setOnRefreshListener(new PullToRefreshLayout.OnRefreshListener() {
@@ -62,7 +62,7 @@ public class PublishYetFragment extends BaseFragment {
             }
         });
     }
-    private void showDialog(String message) {
+    private void showDialog(String message, final int position) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(activity);
         dialog.setTitle("提示");
         dialog.setMessage(message);
@@ -70,7 +70,7 @@ public class PublishYetFragment extends BaseFragment {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                canclePublish();
+                canclePublish(position);
             }
         });
         dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -109,8 +109,6 @@ public class PublishYetFragment extends BaseFragment {
                         try {
                             JSONObject jsonObject = new JSONObject(response.body());
                             if (jsonObject.getInt("code") == 0) {
-
-
                                 String content = jsonObject.getString("data");
                                 JSONObject jsonObject2 = new JSONObject(content);
                                 String content2 = jsonObject2.getString("list");
@@ -151,7 +149,38 @@ public class PublishYetFragment extends BaseFragment {
                 });
     }
 
-    private void canclePublish() {
+    private void canclePublish(int position) {
+        showProgressDialog();
+        OkGo.<String>delete(CodeConstants.URL_Query + "/publish/"+ list.get(position).getId())
+                .headers("Token", CodeConstants.HEADERS)
+                .execute(new StringCallback() {
+                    @Override
+                    public void onSuccess(Response<String> response) {
+                        Log.i("====", response.body());
+                        try {
+                            JSONObject jsonObject = new JSONObject(response.body());
+                            if (jsonObject.getInt("code") == 0) {
+                                showToast(jsonObject.getString("msg"));
+                            } else {
+                                showToast(jsonObject.getString("msg"));
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        dismissProgressDialog();
+                    }
+
+                    @Override
+                    public void onError(Response<String> response) {
+                        super.onError(response);
+                        dismissProgressDialog();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        dismissProgressDialog();
+                    }
+                });
 
     }
     private void initViews() {

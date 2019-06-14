@@ -456,37 +456,41 @@ public class MeFragment extends BaseFragment implements View.OnClickListener, Ad
      * 退出登录
      */
     private void logOut() {
-        showProgressDialog();
-        OkGo.<String>post(CodeConstants.URL_Query + "/logout?")
-                .params(CodeConstants.USER_NAME, account)
-                .params(CodeConstants.PASSWORD, password)
-                .execute(new StringCallback() {
-                    @Override
-                    public void onSuccess(Response<String> response) {
-                        LogUtil.i("===logOut", response.body());
-                        try {
-                            JSONObject jsonObject = new JSONObject(response.body());
-                            if (jsonObject.getInt("code") == 0) {
-                                showToast("退出成功");
-                            } else {
-                                showToast(jsonObject.getString("msg"));
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        dismissProgressDialog();
-                    }
-
-                    @Override
-                    public void onError(Response<String> response) {
-                        super.onError(response);
-                        dismissProgressDialog();
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        dismissProgressDialog();
-                    }
-                });
+        application.setCustId("");
+        application.setCustToken("");
+        login_name.setText("登陆");
+        CodeConstants.HEADERS = "";
+        showToast("退出成功");
+//        showProgressDialog();
+//        OkGo.<String>get(CodeConstants.URL_Query + "/logout?")
+//                .params(CodeConstants.TOKEN, CodeConstants.HEADERS)
+//                .execute(new StringCallback() {
+//                    @Override
+//                    public void onSuccess(Response<String> response) {
+//                        LogUtil.i("===logOut", response.body());
+//                        try {
+//                            JSONObject jsonObject = new JSONObject(response.body());
+//                            if (jsonObject.getInt("code") == 0) {
+//                                showToast("退出成功");
+//                            } else {
+//                                showToast(jsonObject.getString("msg"));
+//                            }
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                        dismissProgressDialog();
+//                    }
+//
+//                    @Override
+//                    public void onError(Response<String> response) {
+//                        super.onError(response);
+//                        dismissProgressDialog();
+//                    }
+//
+//                    @Override
+//                    public void onFinish() {
+//                        dismissProgressDialog();
+//                    }
+//                });
     }
 }

@@ -23,8 +23,8 @@ import io.vov.vitamio.widget.VideoView;
  * 审核 -->排期详情 -->排期内容预览详情
  */
 public class CheckDetailsSchedulePreviewActivity extends BaseActivity implements MediaController.OnControllerListener, MediaPlayer.OnInfoListener, MediaPlayer.OnBufferingUpdateListener{
-//    private String path ="http://we.taagoo.com/vrplayer/VR.mp4";
-    private String path ="";
+    private String path ="http://we.taagoo.com/vrplayer/VR.mp4";
+//    private String path ="";
     private Uri uri;
     private VideoView mVideoView;
     private ProgressBar pb;
@@ -63,7 +63,7 @@ public class CheckDetailsSchedulePreviewActivity extends BaseActivity implements
         loadRateView = (TextView) findViewById(R.id.load_rate);
         if (path == "") {
             // Tell the user to provide a media file URL/path.
-            pb.setVisibility(View.GONE);
+//            pb.setVisibility(View.GONE);
             return;
         } else {
             LinearLayout.LayoutParams fl_lp = new LinearLayout.LayoutParams(

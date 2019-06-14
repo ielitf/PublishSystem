@@ -10,6 +10,7 @@ import android.widget.EditText;
 import com.danggui.publishsystem.R;
 import com.danggui.publishsystem.base.BaseActivity;
 import com.danggui.publishsystem.control.CodeConstants;
+import com.danggui.publishsystem.control.MyApplication;
 import com.danggui.publishsystem.utils.LogUtil;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -98,6 +99,7 @@ public class LoginActivity extends BaseActivity {
                                 showToast("登录成功");
                                 String data = jsonObject.getString("data");
                                 application.setCustId(data);
+                                application.setCustToken(data);
                                 CodeConstants.HEADERS = data;
                                 finish();
                             }

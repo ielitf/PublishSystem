@@ -174,7 +174,7 @@ public class CheckNewsDetailsActivity extends BaseActivity implements View.OnCli
 
     private void noPassBtn() {
         showProgressDialog();
-        OkGo.<String>get(CodeConstants.URL_Query + "/schedule/" + id + "?")
+        OkGo.<String>put(CodeConstants.URL_Query + "/schedule/" + id + "?")
                 .headers("Token", CodeConstants.HEADERS)
                 .params(CodeConstants.DESCRIPTION, opinionDescription)
                 .params(CodeConstants.OPERATION, "auditFail")
@@ -210,7 +210,7 @@ public class CheckNewsDetailsActivity extends BaseActivity implements View.OnCli
 
     private void pass() {
         showProgressDialog();
-        OkGo.<String>get(CodeConstants.URL_Query + "/schedule/" + id + "?")
+        OkGo.<String>put(CodeConstants.URL_Query + "/schedule/" + id + "?")
                 .headers("Token", CodeConstants.HEADERS)
                 .params(CodeConstants.DESCRIPTION, opinionDescription)
                 .params(CodeConstants.OPERATION, "auditSuccess")

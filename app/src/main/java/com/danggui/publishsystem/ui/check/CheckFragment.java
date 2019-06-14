@@ -92,7 +92,7 @@ public class CheckFragment extends BaseFragment {
 
     private void loadData(final int page) {
         OkGo.<String>get(CodeConstants.URL_Query + "/audits?")
-                .headers("Token", CodeConstants.HEADERS)
+                .headers(CodeConstants.TOKEN, CodeConstants.HEADERS)
                 .params(CodeConstants.PAGE, page)
                 .params(CodeConstants.PAGE_SIZE, 5)
                 .params(CodeConstants.STATUS, 2)

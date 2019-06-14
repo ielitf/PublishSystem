@@ -132,7 +132,7 @@ public class MyApplication extends Application {
 	public String getCustId() {
 		SharedPreferences preferences = PreferenceManager
 				.getDefaultSharedPreferences(MyApplication.this);
-		custId = preferences.getString(PREF_CUST_ID, null);
+		custId = preferences.getString(PREF_CUST_ID, "");
 		return custId;
 	}
 
